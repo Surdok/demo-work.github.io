@@ -1,0 +1,58 @@
+<div class="row">
+  <mat-card>
+    <mat-card-title>Selects</mat-card-title>
+    <mat-divider></mat-divider>
+    <br />
+    <mat-card-content>
+      <div class="row">
+        <div class="col-md-4">
+          <ng-select [placeholder]="'Person'" [items]="cities" groupBy="avatar" [(ngModel)]="selectedCity"
+            bindLabel="name" bindValue="name">
+            <ng-template ng-label-tmp let-item="item">
+              <img height="15" width="15" [src]="item.avatar" />
+              <b>{{item.name}}</b>
+            </ng-template>
+            <ng-template ng-optgroup-tmp let-item="item" let-index="index">
+              City group logo <img height="15" width="15" [src]="item.avatar" />
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-index="index" let-search="searchTerm">
+              <b>{{item.name}}</b>
+            </ng-template>
+          </ng-select>
+        </div>
+
+        <div class="col-md-4">
+          <ng-select [items]="people" [multiple]="true" bindLabel="name" groupBy="gender" [selectableGroup]="true"
+            [selectableGroupAsModel]="false" [closeOnSelect]="false" bindValue="id" [(ngModel)]="selectedPeople">
+            <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.gender | uppercase}}
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+            </ng-template>
+          </ng-select>
+        </div>
+        <div class="col-md-4">
+          <ng-select [items]="companies" [addTag]="addTagFn" [hideSelected]="true" [multiple]="true" bindLabel="name"
+            [(ngModel)]="selectedCompanies">
+          </ng-select>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+<br />
+<div class="row">
+  <mat-card>
+    <mat-card-title>Grid</mat-card-title>
+    <mat-divider></mat-divider>
+    <br />
+    <mat-card-content>
+
+      <ag-grid-angular [defaultColDef]="defaultColDef" class="ag-theme-material w-100" style="height: 450px;"
+        [columnDefs]="colDefs" [rowSelection]="'multiple'" [animateRows]="true" [rowData]="rowData">
+      </ag-grid-angular>
+    </mat-card-content>
+  </mat-card>
+
+</div>
