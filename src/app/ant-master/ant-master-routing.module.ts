@@ -16,6 +16,10 @@ const routes: Routes = [
         loadComponent: () => import('./components/components.component').then(c => c.ComponentsComponent)
       },
       {
+        path: 'users-list',
+        loadComponent: () => import('./users-list/users-list.component').then(c => c.UsersListComponent)
+      },
+      {
         path: '**',
         redirectTo: 'dashboard'
       }
