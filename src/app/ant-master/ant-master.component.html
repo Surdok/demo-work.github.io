@@ -2,19 +2,19 @@
   <nz-sider nzCollapsible nzWidth="200px">
     <div class="logo"></div>
     <ul nz-menu nzTheme="dark" nzMode="inline">
-      <li nz-menu-item>
+      <li nz-menu-item routerLink="/ant/dashboard">
         <span nz-icon nzType="pie-chart"></span>
-        <span>Option 1</span>
+        <span>Dashboard</span>
       </li>
-      <li nz-menu-item>
+      <li nz-menu-item routerLink="/ant/components">
         <span nz-icon nzType="desktop"></span>
-        <span>Option 2</span>
+        <span>Components</span>
       </li>
-      <li nz-submenu nzTitle="User" nzIcon="user">
+      <li nz-submenu nzTitle="User Management" nzIcon="user">
         <ul>
-          <li nz-menu-item>Tom</li>
-          <li nz-menu-item>Bill</li>
-          <li nz-menu-item>Alex</li>
+          <li nz-menu-item>User List</li>
+          <li nz-menu-item>Permissions</li>
+          <li nz-menu-item>Migration</li>
         </ul>
       </li>
       <li nz-submenu nzTitle="Team" nzIcon="team">
@@ -23,14 +23,18 @@
           <li nz-menu-item>Team 2</li>
         </ul>
       </li>
-      <li nz-menu-item>
-        <span nz-icon nzType="file"></span>
-        <span>File</span>
+      <li nz-menu-item routerLink="/material/">
+        <span nz-icon nzType="desktop"></span>
+        <span>Material Design</span>
       </li>
     </ul>
   </nz-sider>
   <nz-layout>
-    <nz-header></nz-header>
+    <nz-header class="d-flex align-items-center">
+      <h1 class="m-0 px-2 ">
+        My Application
+      </h1>
+    </nz-header>
     <nz-content>
       <nz-breadcrumb>
         <nz-breadcrumb-item>User</nz-breadcrumb-item>
